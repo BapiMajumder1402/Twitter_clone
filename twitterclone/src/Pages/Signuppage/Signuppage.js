@@ -15,9 +15,6 @@ function SignupPage() {
         localStorage.setItem("User", JSON.stringify(data));
         setSignupuser({ id: Math.random(), name: '', phone: '', email: '', password: '', repassword: '' });
     }
-    function navigationHandler() {
-        Navigate("/")
-    }
     return (<div>
         <form onSubmit={(e) => e.preventDefault()} >
             <input type='text' placeholder='Name' onChange={SignupHandler} value={Signupuser.name} name='name' />
@@ -26,7 +23,7 @@ function SignupPage() {
             <input type='password' placeholder='Password' onChange={SignupHandler} value={Signupuser.password} name='password' />
             <input type='password' placeholder='Confirm Password' onChange={SignupHandler} value={Signupuser.repassword} name='repassword' />
             <button onClick={SignedUser} > Signup </button>
-            <button onClick={navigationHandler} > Back to Login </button >
+            <button onClick={() => Navigate("/")} > Back to Login </button >
         </form>
     </div>)
 }

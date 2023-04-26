@@ -1,20 +1,18 @@
 import React, { useState } from 'react'
 import l from './Login.module.css'
+import { useNavigate } from 'react-router-dom'
+
 
 export default function Login() {
-  const [Login, setLogin] = useState(true);
+  const Navigate = useNavigate();
   const [Loginuser, setLoginuser] = useState({ email: '', password: '' });
-  const [Signupuser, setSignupuser] = useState({ id: Math.random(), name: '', phone: '', email: '', password: '', repassword: '' });
-  const updatedUsers = JSON.parse(localStorage.getItem("User")) || []
+  const updatedUsers = JSON.parse(localStorage.getItem("User")) || [];
+
   function LoginHandler(e) {
     const { name, value } = e.target;
     setLoginuser({ ...Loginuser, [name]: value });
   }
 
-  function SignupHandler(e) {
-    const { name, value } = e.target;
-    setSignupuser({ ...Signupuser, [name]: value });
-  }
   function loggedUser() {
     const access = updatedUsers.find(val => val.email === Loginuser.email && val.password === Loginuser.password)
     if (access) {
@@ -23,29 +21,19 @@ export default function Login() {
       console.log("No you are not logged in now.");
     }
   }
-  function SignedUser() {
-    const data = [...updatedUsers, Signupuser]
-    localStorage.setItem("User", JSON.stringify(data));
-    setSignupuser({ id: Math.random(), name: '', phone: '', email: '', password: '', repassword: '' });
+
+  function navigationHandler() {
+    Navigate("/signup")
   }
+
   return (
     <div>
-      {Login === true ?
-        <form onSubmit={(e) => e.preventDefault()} >
-          <input type='email' placeholder='Email' onChange={LoginHandler} value={Loginuser.email} name='email' />
-          <input type='password' placeholder='Password' onChange={LoginHandler} value={Loginuser.password} name='password' />
-          <button onClick={loggedUser} >Login</button>
-          <button button onClick={() => setLogin(false)} >Not a User? SignUp!</button>
-        </form>
-        :
-        <form onSubmit={(e) => e.preventDefault()} >
-          <input type='text' placeholder='Name' onChange={SignupHandler} value={Signupuser.name} name='name' />
-          <input type='number' placeholder='Mobile Number' onChange={SignupHandler} value={Signupuser.phone} name='phone' />
-          <input type='email' placeholder='Email' onChange={SignupHandler} value={Signupuser.email} name='email' />
-          <input type='password' placeholder='Password' onChange={SignupHandler} value={Signupuser.password} name='password' />
-          <input type='password' placeholder='Confirm Password' onChange={SignupHandler} value={Signupuser.repassword} name='repassword' />
-          <button onClick={SignedUser} > Signup </button>
-          <button onClick={() => setLogin(true)} > Back to Login </button></form>}
+      <form onSubmit={(e) => e.preventDefault()} >
+        <input type='email' placeholder='Email' onChange={LoginHandler} value={Loginuser.email} name='email' />
+        <input type='password' placeholder='Password' onChange={LoginHandler} value={Loginuser.password} name='password' />
+        <button onClick={loggedUser} >Login</button>
+        <button button onClick={navigationHandler} >Not a User? SignUp!</button >
+      </form>
     </div >
   )
 }

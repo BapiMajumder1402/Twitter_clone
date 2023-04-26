@@ -52,7 +52,7 @@ export default function Login() {
             Log in
           </Button>
           <div>
-            <Button className={l.btnSignup} variant="contained" disableElevation onClick={() => setLogin(false)} >Not a User? SignUp!</Button>
+            <Button className={l.btnSignup} variant="contained" disableElevation onClick={() => Navigate('/Signup')} >Not a User? SignUp!</Button>
           </div>
 
         </form>

@@ -3,10 +3,10 @@ import n from './Nav.module.css'
 import { useNavigate } from 'react-router-dom'
 
 export default function Nav() {
-    const Navigate =useNavigate()
-    const clickHandler =()=>{
-        Navigate('/Login')
-    }
+  const Navigate = useNavigate()
+  const clickHandler = () => {
+    Navigate('/')
+  }
   return (
     <nav className={n.main}>
       <div>Logo</div>

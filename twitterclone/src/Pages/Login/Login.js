@@ -5,7 +5,7 @@ export default function Login() {
   const [Login, setLogin] = useState(true);
   const [Loginuser, setLoginuser] = useState({ email: '', password: '' });
   const [Signupuser, setSignupuser] = useState({ id: Math.random(), name: '', phone: '', email: '', password: '', repassword: '' });
-
+  const updatedUsers = JSON.parse(localStorage.getItem("User")) || []
   function LoginHandler(e) {
     const { name, value } = e.target;
     setLoginuser({ ...Loginuser, [name]: value });
@@ -16,10 +16,17 @@ export default function Login() {
     setSignupuser({ ...Signupuser, [name]: value });
   }
   function loggedUser() {
-    console.log(Loginuser);
+    const access = updatedUsers.find(val => val.email === Loginuser.email && val.password === Loginuser.password)
+    if (access) {
+      console.log("Yes you are logged in now.");
+    } else {
+      console.log("No you are not logged in now.");
+    }
   }
   function SignedUser() {
-    localStorage.setItem("User", JSON.stringify(Signupuser))
+    const data = [...updatedUsers, Signupuser]
+    localStorage.setItem("User", JSON.stringify(data));
+    setSignupuser({ id: Math.random(), name: '', phone: '', email: '', password: '', repassword: '' });
   }
   return (
     <div>

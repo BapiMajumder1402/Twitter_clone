@@ -1,0 +1,89 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.main{
+    background-color: #808080;
+    width:100vw;
+    height:100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.box{
+    border-radius: 15px;
+    height: 80%;
+    background-color: white;
+    width:40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.form{
+    width: 55% ;
+}
+.input{
+    margin-top: 1rem;
+    width: 100%;
+
+}
+.inputDiv{
+    margin-top:  1rem;
+}
+.logo{
+    text-align: center;
+    font-size: 2rem;
+    color: rgb(29, 155, 240);
+}
+.connect{
+    border-radius: 23px;
+    margin-top: 1rem;
+    border: 0.2px solid gray;
+    font-size: 1rem;
+    background-color: white;
+    width: 100%;
+    padding: .5rem;
+}
+.connect:hover{
+    background-color: rgb(234, 232, 232);
+
+}
+.btnLogin{
+    color: white;
+    font-weight: 600;
+    padding: .5rem;
+    background-color: black;
+    width: 100%;
+    border-radius: 23px;
+    margin-top: 1rem;
+}
+.btnSignup{
+    border: 0.2px solid gray;
+    color: rgb(12, 12, 12);
+    font-weight: 600;
+    padding: .5rem;
+    background-color: white;
+    width: 100%;
+    border-radius: 23px;
+    margin-top: 1rem;
+}
+
+.btnLogin:hover{background-color: rgb(45, 43, 43);
+    
+}
+.btnSignup:hover{background-color: rgb(234, 232, 232);
+    
+}
+
+.form>h2{
+    margin-top: 1rem;
+    text-align: center;
+}
+.or{
+    
+    justify-content: space-between;
+}
+.or>span{
+    width:33%;
+}

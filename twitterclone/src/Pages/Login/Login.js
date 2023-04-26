@@ -39,10 +39,13 @@ export default function Login() {
             <button className={l.connect}><FcGoogle /> Sign in with Google</button>
             <button className={l.connect}><BsApple /> Sign in with Apple</button>
           </div>
-
-          <button></button>
+          <div className={l.or}>
+            <span><hr /></span>
+            
+            <span>or</span>
+            <span><hr /></span>
+          </div>
           <div className={l.inputDiv}>
-
             <TextField className={l.input} type='email' placeholder='Email' onChange={LoginHandler} value={Loginuser.email} name='email' id="outlined-basic" label="Email" variant="outlined" />
           </div>
           <div className={l.inputDiv}>

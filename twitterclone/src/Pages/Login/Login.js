@@ -1,5 +1,13 @@
 import React, { useState } from 'react'
 import l from './Login.module.css'
+import { TextField } from "@mui/material";
+import { Button } from "@mui/material";
+import { BsTwitter } from 'react-icons/bs';
+import { FcGoogle } from "react-icons/fc";
+import { BsApple } from "react-icons/bs";
+
+
+
 
 export default function Login() {
   const [Login, setLogin] = useState(true);
@@ -22,16 +30,39 @@ export default function Login() {
     localStorage.setItem("User", JSON.stringify(Signupuser))
   }
   return (
-    <div>
+    <div className={l.main}>
       {Login === true ?
-        <form onSubmit={(e) => e.preventDefault()} >
-          <input type='email' placeholder='Email' onChange={LoginHandler} value={Loginuser.email} name='email' />
-          <input type='password' placeholder='Password' onChange={LoginHandler} value={Loginuser.password} name='password' />
-          <button onClick={loggedUser} >Login</button>
-          <button button onClick={() => setLogin(false)} >Not a User? SignUp!</button>
-        </form>
+        <div className={l.box}>
+          <form className={l.form} onSubmit={(e) => e.preventDefault()} >
+            <div className={l.logo}><BsTwitter /></div>
+            <h2>Sign in to Twitter</h2>
+            <div>
+              <button className={l.connect}><FcGoogle /> Sign in with Google</button>
+              <button className={l.connect}><BsApple /> Sign in with Apple</button>
+            </div>
+
+            <button></button>
+            <div className={l.inputDiv}>
+
+              <TextField className={l.input} type='email' placeholder='Email' onChange={LoginHandler} value={Loginuser.email} name='email' id="outlined-basic" label="Email" variant="outlined" />
+            </div>
+            <div className={l.inputDiv}>
+              <TextField className={l.input} type='password' placeholder='Password' onChange={LoginHandler} value={Loginuser.password} name='password' id="outlined-basic" label="Password" variant="outlined" />
+            </div>
+            <Button className={l.btnLogin} variant="contained" disableElevation>
+              Log in
+            </Button>
+            <div>
+              <Button className={l.btnSignup} variant="contained" disableElevation onClick={() => setLogin(false)} >Not a User? SignUp!</Button>
+            </div>
+
+          </form>
+
+        </div>
+
         :
         <form onSubmit={(e) => e.preventDefault()} >
+
           <input type='text' placeholder='Name' onChange={SignupHandler} value={Signupuser.name} name='name' />
           <input type='number' placeholder='Mobile Number' onChange={SignupHandler} value={Signupuser.phone} name='phone' />
           <input type='email' placeholder='Email' onChange={SignupHandler} value={Signupuser.email} name='email' />

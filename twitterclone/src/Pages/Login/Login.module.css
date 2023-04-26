@@ -81,9 +81,15 @@
     text-align: center;
 }
 .or{
-    
-    justify-content: space-between;
+    margin-top:  1rem ;
+    margin-bottom:  1rem ;
+    width: 100%;
+    text-align: center;
+}
+.or>hr{
+    display: inline-block;
+    width:40%;
 }
 .or>span{
-    width:33%;
+    margin: 1rem;
 }

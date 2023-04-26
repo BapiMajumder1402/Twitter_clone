@@ -40,10 +40,10 @@ export default function Login() {
             <button className={l.connect}><BsApple /> Sign in with Apple</button>
           </div>
           <div className={l.or}>
-            <span><hr /></span>
+            <hr />
             
             <span>or</span>
-            <span><hr /></span>
+            <hr />
           </div>
           <div className={l.inputDiv}>
             <TextField className={l.input} type='email' placeholder='Email' onChange={LoginHandler} value={Loginuser.email} name='email' id="outlined-basic" label="Email" variant="outlined" />

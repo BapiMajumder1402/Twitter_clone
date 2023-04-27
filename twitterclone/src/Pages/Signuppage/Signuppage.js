@@ -3,9 +3,7 @@ import s from "./Signuppage.module.css"
 import { useNavigate } from 'react-router-dom'
 import { TextField } from "@mui/material";
 import { Button } from "@mui/material";
-import { BsTwitter } from 'react-icons/bs';
-import { FcGoogle } from "react-icons/fc";
-import { BsApple } from "react-icons/bs";
+
 // import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 
 function SignupPage() {

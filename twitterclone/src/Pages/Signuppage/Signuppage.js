@@ -10,7 +10,7 @@ import { BsApple } from "react-icons/bs";
 
 function SignupPage() {
     const Navigate = useNavigate()
-    const updatedUsers = JSON.parse(localStorage.getItem("User")) || []
+    const updatedUsers = JSON.parse(localStorage.getItem("users")) || []
     const [Signupuser, setSignupuser] = useState({ id: Math.random(), name: '', phone: '', email: '', password: '', repassword: '' });
     function SignupHandler(e) {
         const { name, value } = e.target;
@@ -23,10 +23,10 @@ function SignupPage() {
     }
     return (<div className={s.main}>
         <div className={s.box}>
-            
+
             <form className={s.form} onSubmit={(e) => e.preventDefault()} >
-            <h2>Create Your Account</h2>
-                <TextField  className={s.input} id="outlined-basic" label="Name" variant="outlined" type='text' placeholder='Name' onChange={SignupHandler} value={Signupuser.name} name='name' />
+                <h2>Create Your Account</h2>
+                <TextField className={s.input} id="outlined-basic" label="Name" variant="outlined" type='text' placeholder='Name' onChange={SignupHandler} value={Signupuser.name} name='name' />
                 <TextField className={s.input} id="outlined-basic" label="Phone" variant="outlined" type='number' placeholder='Mobile Number' onChange={SignupHandler} value={Signupuser.phone} name='phone' />
                 <TextField className={s.input} id="outlined-basic" label="Email" variant="outlined" type='email' placeholder='Email' onChange={SignupHandler} value={Signupuser.email} name='email' />
                 <TextField className={s.input} id="outlined-basic" label="Password" variant="outlined" type='password' placeholder='Password' onChange={SignupHandler} value={Signupuser.password} name='password' />

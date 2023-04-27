@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import l from './Login.module.css'
 import { useNavigate } from 'react-router-dom'
 import { TextField } from "@mui/material";
@@ -6,28 +6,39 @@ import { Button } from "@mui/material";
 import { BsTwitter } from 'react-icons/bs';
 import { FcGoogle } from "react-icons/fc";
 import { BsApple } from "react-icons/bs";
-
-
-
+import users from "/home/akhilesh/Desktop/Twitter_clone/twitterclone/src/Data/users.json"
+import tweetdata from "/home/akhilesh/Desktop/Twitter_clone/twitterclone/src/Data/tweets.json"
+import { useSelector, useDispatch } from "react-redux";
+import { add_user, add_tweet } from '../../Component/Redux/actions';
 
 export default function Login() {
+  const user = useSelector(state => state.user);
+  const tweets = useSelector(state => state.tweets);
+  const dispatch = useDispatch();
+  localStorage.setItem('users', JSON.stringify(users));
   const Navigate = useNavigate();
   const [Loginuser, setLoginuser] = useState({ email: '', password: '' });
-  const updatedUsers = JSON.parse(localStorage.getItem("User")) || [];
+  const updatedUsers = JSON.parse(localStorage.getItem("users")) || [];
+
 
   function LoginHandler(e) {
     const { name, value } = e.target;
     setLoginuser({ ...Loginuser, [name]: value });
-  }
+  };
 
   function loggedUser() {
     const access = updatedUsers.find(val => val.email === Loginuser.email && val.password === Loginuser.password);
     if (access) {
-      console.log("Yes you are logged in now.");
+      dispatch(add_user(access))
     } else {
       console.log("No you are not logged in now.");
     }
-  }
+  };
+
+  useEffect(() => {
+    dispatch(add_tweet(tweetdata));
+  }, []);
+  console.log(tweetdata);
 
   return (
     <div className={l.main}>
@@ -41,7 +52,7 @@ export default function Login() {
           </div>
           <div className={l.or}>
             <hr />
-            
+
             <span>or</span>
             <hr />
           </div>
@@ -51,7 +62,7 @@ export default function Login() {
           <div className={l.inputDiv}>
             <TextField className={l.input} type='password' placeholder='Password' onChange={LoginHandler} value={Loginuser.password} name='password' id="outlined-basic" label="Password" variant="outlined" />
           </div>
-          <Button className={l.btnLogin} variant="contained" disableElevation>
+          <Button className={l.btnLogin} variant="contained" disableElevation onClick={loggedUser}>
             Log in
           </Button>
           <div>

@@ -3,16 +3,18 @@ import Nav from './Component/Navbar/Nav';
 import { Route, Routes } from 'react-router-dom'
 import Login from './Pages/Login/Login';
 import SignupPage from './Pages/Signuppage/Signuppage';
+import { Provider } from 'react-redux';
+import store from './Component/Redux/store';
 
 function App() {
   return (
-    <div className="App">
+    <Provider store={store} >
       <Routes>
         <Route path='/' element={<Login />}></Route>
         <Route path='/signup' element={<SignupPage />}></Route>
       </Routes>
       <Nav></Nav>
-    </div>
+    </Provider>
   );
 }
 

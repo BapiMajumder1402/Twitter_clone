@@ -13,16 +13,20 @@ function Feed() {
                 <div className={f.NameContainer}>
                     <p className={f.name} >John Doe</p>
                     <p className={f.content} >Just had the best pizza ever! 🍕🤤 #foodie #yum</p>
-                </div>
-            </div >
-            <div className={f.Body}>
-                <img src={"https://picsum.photos/1000/500?q=2"} className={f.bodyImage} />
+                    <div className={f.Body}>
+                        <img src={"https://picsum.photos/1000/500?q=2"} className={f.bodyImage} />
+                        <div className={f.Footer} >
+                            <div><AiOutlineHeart /> 12</div>
+                            <div><FaRegComment /> 3</div>
+                            <div><RxLoop /> 2</div>
+                        </div>
+
+                    </div>
+                </div >
+
+
             </div>
-            <div className={f.Footer} >
-                <div><AiOutlineHeart /> 12</div>
-                <div><FaRegComment /> 3</div>
-                <div><RxLoop /> 2</div>
-            </div>
+
         </div>)
 }
 export default Feed;

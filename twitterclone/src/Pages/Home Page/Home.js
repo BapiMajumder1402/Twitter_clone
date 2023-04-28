@@ -1,9 +1,9 @@
-import Left from "/home/akhilesh/Desktop/Twitter_clone/twitterclone/src/Component/Left component/Left.js"
+import Left from "../../Component/Left component/Left"
 import FeedTop from '../../Component/Feed Top/FeedTop';
 import h from "./Home.module.css"
 import Feed from "../../Component/FeedComponent/Feed"
 function Home() {
-    return (<div>
+    return (<div className={h.mainContainer}>
         <Left />
         <div className={h.feedContainer}>
             <FeedTop />

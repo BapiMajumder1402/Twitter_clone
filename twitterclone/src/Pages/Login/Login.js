@@ -35,11 +35,6 @@ export default function Login() {
     }
   };
 
-  useEffect(() => {
-    dispatch(add_tweet(tweetdata));
-  }, []);
-  console.log(tweetdata);
-
   return (
     <div className={l.main}>
       <div className={l.box}>

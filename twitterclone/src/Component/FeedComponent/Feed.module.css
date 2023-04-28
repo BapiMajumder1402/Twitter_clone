@@ -1,0 +1,46 @@
+.parent {
+  width: 30vw;
+  height: 25vw;
+  justify-content: center;
+  align-items: center;
+}
+/* ================================================ */
+.Header {
+  height: 17%;
+  flex-wrap: wrap;
+  display: flex;
+}
+.Dp {
+  background-color: black;
+  width: 17%;
+  height: 100%;
+}
+.NameContainer {
+  width: 80%;
+  height: 100%;
+  flex-direction: column;
+}
+.name {
+  background-color: chartreuse;
+  height: 30%;
+}
+.content {
+  background-color: crimson;
+  height: 70%;
+}
+
+/* ================================================ */
+
+.Body {
+  background-color: brown;
+  height: max-content;
+  width: 90%;
+  margin: auto;
+}
+
+/* ================================================= */
+
+.Footer {
+  background-color: burlywood;
+  height: 10%;
+}

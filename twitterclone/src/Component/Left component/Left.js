@@ -18,15 +18,15 @@ export default function Left() {
     <div className={l.main_container}>
       <div className={l.box}>
         <div className={l.contents}>
-            <div className={l.content}><BsTwitter className={l.logo}/></div>
-            <div className={l.content}><BiHomeCircle/> <span>Home</span></div>
-            <div className={l.content}><BiHash/><span>Explore</span></div>
-            <div className={l.content}><GrNotification/><span>Notification</span></div>
-            <div className={l.content}><HiOutlineMail/><span>Messages</span></div>
-            <div className={l.content}><FaBookmark/><span>Bookmarks</span></div>
-            <div className={l.content}><FaTwitterSquare className={l.logo}/><span>Twitter Blue</span></div>
-            <div className={l.content}><CgProfile/><span>Profile</span></div>
-            <div className={l.content}><CgMoreO/><span>More</span></div>
+            <div className={l.content}><BsTwitter className={l.tlogo}/></div>
+            <div className={l.content}><BiHomeCircle className={l.logo}/> <span>Home</span></div>
+            <div className={l.content}><BiHash className={l.logo}/><span>Explore</span></div>
+            <div className={l.content}><GrNotification className={l.logo}/><span>Notification</span></div>
+            <div className={l.content}><HiOutlineMail className={l.logo}/><span>Messages</span></div>
+            <div className={l.content}><FaBookmark className={l.logo}/><span>Bookmarks</span></div>
+            <div className={l.content}><FaTwitterSquare className={l.tlogo}/><span>Twitter Blue</span></div>
+            <div className={l.content}><CgProfile className={l.logo}/><span>Profile</span></div>
+            <div className={l.content}><CgMoreO className={l.logo}/><span>More</span></div>
             <div><button className={l.tbtn}>Tweet</button></div>
         </div>
         <div className={l.pro}>

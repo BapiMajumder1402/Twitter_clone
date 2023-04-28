@@ -1,0 +1,49 @@
+.main{
+    width: 100%;
+    border: .5px solid rgb(244, 240, 240);
+    display: flex;
+}
+.img{
+    width: 10%;
+    padding: 1.5rem;
+}
+.post{
+    /* height: 100%; */
+    width: 85%;
+}
+.input>textarea{
+    
+    font-size: 1rem;
+    padding: .8rem;
+    height: 2rem;
+    border: none;
+    outline: none;
+    width: 90%;
+}
+.input>textarea::-webkit-scrollbar{
+    width: 0;
+}
+.img>img{
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 100%;
+}
+.bottom{
+    display: flex;
+    justify-content: space-between;
+}
+.icon{
+    padding: .3rem;
+    font-size: 1.1rem;
+    color:  rgb(29, 155, 240);
+}
+.tbtn>button{
+    margin-right: 1.2rem;
+    border: 0;
+    outline: 0;
+    color: white;
+    border-radius: 15px;
+    background-color: rgb(29, 155, 240);
+    padding: .4rem;
+    font-weight: 600;
+}

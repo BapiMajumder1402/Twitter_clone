@@ -1,31 +1,20 @@
 import React from 'react'
+import Post from './Post'
+import f from "./Feed.module.css"
 
 export default function FeedTop() {
   return (
-    <div>
-      <div>
-        <div>
-            <h1>Home</h1>
+    <div className={f.main}>
+      <div className={f.box}>
+        <div className={f.first}>
+          <h2>Home</h2>
         </div>
-        <div>
-            <div><p>For You</p></div>
-            <div><p>Following</p></div>
-        </div>
-        <div>
-            <div>
-                <img src="" alt="" />
-            </div>
-            <div>
-                <div>
-                    
-                </div>
-                <div>
-                    <div></div>
-                    <div></div>
-                </div>
-            </div>
+        <div className={f.second}>
+          <div>For You</div>
+          <div>Following</div>
         </div>
       </div>
+      <Post/>
     </div>
   )
 }

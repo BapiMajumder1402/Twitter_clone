@@ -1,36 +1,37 @@
 .main_container{
     display: flex;
-    align-items: center;
     justify-content: end;
+    
     height: 100vh;
     width: 25vw;
   }
   .box{
-    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+    width: 70%;
   
   }
   .contents{
-    position: relative;
-    top: 0;
-    margin-top: 0;
+    width: 80%;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    
   }
   .content{
-    border-radius: 23px;
-    padding: .5rem;
-    height: 2rem;
-    margin-top: .5rem;
+    padding:.5rem ;
     display: flex;
     align-items: center;
-    padding: auto;
-    text-align: left;
-    font-size: 1.5rem;
+    gap: 1rem;
+    border-radius: 23px;
+
   }
   .content:hover{
     background-color: rgb(233, 231, 231);
   }
-  .content>span{
-    margin-left: 1rem;
-  }
+  
   .tbtn{
     font-size: 1.3rem;
     margin-top: 1.5rem;
@@ -46,9 +47,12 @@
   .tbtn:hover{
     background-color: #0782d4;
   }
-  .logo{
+  .tlogo{
     color: #1D9BF0;
-    font-size:35px;
+    font-size:1.8rem;
+  }
+  .logo{
+    font-size: 1.2rem;
   }
 .pro{
     margin-top: 1rem;
@@ -79,4 +83,7 @@
     height: 30px;
     width: 30px;
     border-radius:100% ;
+}
+.content>span{
+  font-size: 1.2rem;
 }

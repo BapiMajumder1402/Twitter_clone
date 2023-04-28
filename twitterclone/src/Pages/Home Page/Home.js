@@ -17,7 +17,7 @@ function Home() {
         <Left />
         <div className={h.feedContainer}>
             <FeedTop />
-            {tweets.map(val => <Feed key={val.id} data={val} />)}
+            {tweets.map((val, i) => <Feed key={i} data={val} />)}
         </div>
     </div>)
 }

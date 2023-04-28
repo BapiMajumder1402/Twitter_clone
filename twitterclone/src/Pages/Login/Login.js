@@ -6,14 +6,12 @@ import { Button } from "@mui/material";
 import { BsTwitter } from 'react-icons/bs';
 import { FcGoogle } from "react-icons/fc";
 import { BsApple } from "react-icons/bs";
-import users from "../../Data/users.json"
 import { useSelector, useDispatch } from "react-redux";
 import { add_user, add_tweet } from '../../Component/Redux/actions';
 
 export default function Login() {
   const user = useSelector(state => state.user);
   const dispatch = useDispatch();
-  // localStorage.setItem('User', JSON.stringify(users));
   const Navigate = useNavigate();
   const [Loginuser, setLoginuser] = useState({ email: '', password: '' });
   const updatedUsers = JSON.parse(localStorage.getItem("User")) || [];

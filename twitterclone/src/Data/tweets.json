@@ -189,5 +189,118 @@
     "commentCount": 25,
     "reTweetsCount": 10,
     "isLiked": false
+  },
+  {
+    "id": "b291d0ae-3c3e-42af-a54d-c5a2b9f43b60",
+    "content": "Just went on an amazing hike today! 🏞️ #naturelover #hiking",
+    "createdAt": "2023-04-28T10:15:00.000Z",
+    "image": "https://picsum.photos/1200/800?q=4",
+    "tweetedBy": {
+      "id": "ee1ed450-2f27-42f2-8b9f-7f65dfbfe8b8",
+      "username": "john_doe",
+      "name": "John Doe",
+      "profilePhoto": "https://randomuser.me/api/portraits/men/45.jpg"
+    },
+    "likeCount": 10,
+    "commentCount": 2,
+    "reTweetsCount": 3,
+    "isLiked": true
+  },
+  {
+    "id": "4f4b9fb1-94f2-482f-8d18-201e5a5dc5e5",
+    "content": "Just tried the most amazing sushi! 🍣 #foodie #sushi",
+    "createdAt": "2023-04-27T19:45:00.000Z",
+    "image": "https://picsum.photos/800/1200?q=2",
+    "tweetedBy": {
+      "id": "9f64ee11-fb8c-4d84-95c1-5801f758b8d3",
+      "username": "sushi_lover",
+      "name": "Samantha Lee",
+      "profilePhoto": "https://randomuser.me/api/portraits/women/85.jpg"
+    },
+    "likeCount": 15,
+    "commentCount": 3,
+    "reTweetsCount": 2,
+    "isLiked": false
+  },
+  {
+    "id": "b4aae7ca-df16-4d9e-a058-4da52f8c512e",
+    "content": "Just finished my first marathon! 🏃‍♂️ #runner #fitness",
+    "createdAt": "2023-04-26T13:10:00.000Z",
+    "image": "https://picsum.photos/900/900?q=1",
+    "tweetedBy": {
+      "id": "052e51e4-4621-4288-a31b-7eeb5d53b0ce",
+      "username": "marathoner",
+      "name": "Mike Johnson",
+      "profilePhoto": "https://randomuser.me/api/portraits/men/62.jpg"
+    },
+    "likeCount": 20,
+    "commentCount": 5,
+    "reTweetsCount": 7,
+    "isLiked": true
+  },
+  {
+    "id": "41346c4f-4a4d-4b5f-8d54-10b18a1ccf5c",
+    "content": "Just finished reading 'The Alchemist' and I am blown away! Such an inspiring book. 📖✨ #booklover #inspiration",
+    "createdAt": "2023-04-27T21:15:00.000Z",
+    "image": "https://picsum.photos/1000/500?q=3",
+    "tweetedBy": {
+      "id": "aa056f6b-cfae-4f95-bd77-1c9f7a6926bc",
+      "username": "bookworm",
+      "name": "Book Worm"
+    },
+    "likeCount": 64,
+    "commentCount": 18,
+    "reTweetsCount": 7,
+    "isLiked": false
+  },
+  {
+    "id": "6d3a6b2f-87f3-442a-b59f-2a7c3d056201",
+    "content": "Just got back from an amazing vacation in Hawaii! 🌴🌺 #travel #beach",
+    "createdAt": "2023-04-25T09:20:00.000Z",
+    "image": "https://picsum.photos/1000/800?q=5",
+    "tweetedBy": {
+      "id": "8f6e7c6e-49a7-47da-8eb6-69740ee77d2e",
+      "username": "travelbug",
+      "name": "Emily Chen",
+      "profilePhoto": "https://randomuser.me/api/portraits/women/62.jpg"
+    },
+    "likeCount": 30,
+    "commentCount": 8,
+    "reTweetsCount": 12,
+    "isLiked": false
+  },
+
+  {
+    "id": "f5c5d8af-c2a7-4a4a-bc4e-d34ca07baa7f",
+    "content": "Just adopted the cutest kitten! 🐱 #catlover #adoptdontshop",
+    "createdAt": "2023-04-24T17:30:00.000Z",
+    "image": "https://picsum.photos/1200/900?q=6",
+    "tweetedBy": {
+      "id": "a96c9b7b-5e5e-4e1f-af38-df6d951f6b39",
+      "username": "catmom",
+      "name": "Lisa Johnson",
+      "profilePhoto": "https://randomuser.me/api/portraits/women/45.jpg"
+    },
+    "likeCount": 25,
+    "commentCount": 6,
+    "reTweetsCount": 5,
+    "isLiked": true
+  },
+
+  {
+    "id": "89d4a4f4-5a35-4c5e-8d7d-33b2ba2b98da",
+    "content": "Just finished a coding project and feeling proud! 💻 #codinglife #programming",
+    "createdAt": "2023-04-23T12:00:00.000Z",
+    "image": "https://picsum.photos/1200/900?q=7",
+    "tweetedBy": {
+      "id": "bfa068cc-245d-436e-84f3-3e1c3f2e8b0c",
+      "username": "codegeek",
+      "name": "David Kim",
+      "profilePhoto": "https://randomuser.me/api/portraits/men/30.jpg"
+    },
+    "likeCount": 12,
+    "commentCount": 2,
+    "reTweetsCount": 1,
+    "isLiked": true
   }
 ]

@@ -7,7 +7,8 @@
     "tweetedBy": {
       "id": "ae3c7463-aa8f-43d3-afef-7b0f13424f08",
       "username": "johndoe",
-      "name": "John Doe"
+      "name": "John Doe",
+      "profilePhoto": "https://randomuser.me/api/portraits/men/29.jpg"
     },
     "likeCount": 12,
     "commentCount": 3,
@@ -22,7 +23,8 @@
     "tweetedBy": {
       "id": "03e0966d-6886-4e4c-971d-fb6c0ec62a85",
       "username": "janesmith",
-      "name": "Jane Smith"
+      "name": "Jane Smith",
+      "profilePhoto": "https://randomuser.me/api/portraits/women/30.jpg"
     },
     "likeCount": 5,
     "commentCount": 1,
@@ -37,7 +39,8 @@
     "tweetedBy": {
       "id": "1a5e1ba5-5e5c-4175-ba36-2a0ba666f301",
       "username": "bobjohnson",
-      "name": "Bob Johnson"
+      "name": "Bob Johnson",
+      "profilePhoto": "https://randomuser.me/api/portraits/men/31.jpg"
     },
     "likeCount": 8,
     "commentCount": 2,
@@ -52,7 +55,8 @@
     "tweetedBy": {
       "id": "c1f044e1-4270-4f10-9d9c-fa936205bbf5",
       "username": "marybrown",
-      "name": "Mary Brown"
+      "name": "Mary Brown",
+      "profilePhoto": "https://randomuser.me/api/portraits/men/33.jpg"
     },
     "likeCount": 20,
     "commentCount": 6,
@@ -67,7 +71,8 @@
     "tweetedBy": {
       "id": "b3645a5d-1413-484c-a59c-71a2a981ba64",
       "username": "foodie_girl",
-      "name": "Emily"
+      "name": "Emily",
+      "profilePhoto": "https://randomuser.me/api/portraits/women/34.jpg"
     },
     "likeCount": 75,
     "commentCount": 23,
@@ -82,7 +87,8 @@
     "tweetedBy": {
       "id": "4de539f4-9c4a-4cb7-9875-908a198f5a06",
       "username": "fitness_guru",
-      "name": "John"
+      "name": "John",
+      "profilePhoto": "https://randomuser.me/api/portraits/men/35.jpg"
     },
     "likeCount": 105,
     "commentCount": 17,
@@ -97,7 +103,8 @@
     "tweetedBy": {
       "id": "bce3f3b3-8e01-4ed7-9730-f471268ca7c9",
       "username": "tv_junkie",
-      "name": "Rachel"
+      "name": "Rachel",
+      "profilePhoto": "https://randomuser.me/api/portraits/women/36.jpg"
     },
     "likeCount": 36,
     "commentCount": 8,
@@ -112,7 +119,8 @@
     "tweetedBy": {
       "id": "5e59b2d5-17bf-442a-8b6d-9306e2d66b04",
       "username": "sushi_lover",
-      "name": "Sushi Lover"
+      "name": "Sushi Lover",
+      "profilePhoto": "https://randomuser.me/api/portraits/men/37.jpg"
     },
     "likeCount": 87,
     "commentCount": 23,
@@ -142,7 +150,8 @@
     "tweetedBy": {
       "id": "7f5d5f5c-167e-4e5d-a857-734ce02704f7",
       "username": "runningqueen",
-      "name": "Running Queen"
+      "name": "Running Queen",
+      "profilePhoto": "https://randomuser.me/api/portraits/women/38.jpg"
     },
     "likeCount": 112,
     "commentCount": 31,
@@ -157,7 +166,8 @@
     "tweetedBy": {
       "id": "4f1c17d7-0bf9-4f8b-9b4d-b2ef978d880e",
       "username": "johndoeauthor",
-      "name": "John Doe"
+      "name": "John Doe",
+      "profilePhoto": "https://randomuser.me/api/portraits/men/39.jpg"
     },
     "likeCount": 87,
     "commentCount": 42,
@@ -172,7 +182,8 @@
     "tweetedBy": {
       "id": "5a865a70-5f5c-40f2-8eb6-82022ca0420e",
       "username": "techguru",
-      "name": "Tech Guru"
+      "name": "Tech Guru",
+      "profilePhoto": "https://randomuser.me/api/portraits/women/40.jpg"
     },
     "likeCount": 98,
     "commentCount": 25,

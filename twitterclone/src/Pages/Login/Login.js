@@ -13,7 +13,6 @@ import { add_user, add_tweet } from '../../Component/Redux/actions';
 
 export default function Login() {
   const user = useSelector(state => state.user);
-  const tweets = useSelector(state => state.tweets);
   const dispatch = useDispatch();
   localStorage.setItem('users', JSON.stringify(users));
   const Navigate = useNavigate();

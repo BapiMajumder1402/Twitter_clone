@@ -1,19 +1,24 @@
 .parent {
-  width: 30vw;
+  width: 40vw;
   height: 25vw;
-  justify-content: center;
-  align-items: center;
+  display: flex;
+  gap: 1%;
+  flex-direction: column;
+  padding: 0.5rem;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 /* ================================================ */
 .Header {
   height: 17%;
   flex-wrap: wrap;
   display: flex;
+  gap: 1%;
 }
 .Dp {
-  background-color: black;
-  width: 17%;
+  width: 11.5%;
   height: 100%;
+  border-radius: 50%;
+  overflow: hidden;
 }
 .NameContainer {
   width: 80%;
@@ -21,26 +26,36 @@
   flex-direction: column;
 }
 .name {
-  background-color: chartreuse;
   height: 30%;
+  display: flex;
+  margin-top: auto;
 }
 .content {
-  background-color: crimson;
   height: 70%;
+}
+.DpImg {
+  height: 100%;
+  width: 100%;
 }
 
 /* ================================================ */
 
 .Body {
-  background-color: brown;
   height: max-content;
   width: 90%;
   margin: auto;
+}
+.bodyImage {
+  height: 100%;
+  width: 100%;
 }
 
 /* ================================================= */
 
 .Footer {
-  background-color: burlywood;
   height: 10%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 1.1rem;
 }

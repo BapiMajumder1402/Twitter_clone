@@ -13,7 +13,7 @@ function reducer(state = initialState, action) {
         case "add_tweet":
             return {
                 ...state,
-                tweets: [...state.tweets, action.payload]
+                tweets: [...state.tweets, ...action.payload]
             }
         default:
             return state

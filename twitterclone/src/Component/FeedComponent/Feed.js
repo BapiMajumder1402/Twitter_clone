@@ -3,22 +3,22 @@ import { AiOutlineHeart } from 'react-icons/ai'
 import { RxLoop } from 'react-icons/rx'
 import { FaRegComment } from 'react-icons/fa'
 
-function Feed() {
+function Feed({ data }) {
     return (
         <div className={f.parent} >
             <div className={f.Header} >
                 <div className={f.Dp} >
-                    <img src={"https://randomuser.me/api/portraits/women/30.jpg"} className={f.DpImg} />
+                    <img src={data.tweetedBy.profilePhoto} className={f.DpImg} />
                 </div>
                 <div className={f.NameContainer}>
-                    <p className={f.name} >John Doe</p>
-                    <p className={f.content} >Just had the best pizza ever! 🍕🤤 #foodie #yum</p>
+                    <p className={f.name} >{data.tweetedBy.name}</p>
+                    <p className={f.content} >{data.content}</p>
                     <div className={f.Body}>
-                        <img src={"https://picsum.photos/1000/500?q=2"} className={f.bodyImage} />
+                        <img src={data.image} className={f.bodyImage} />
                         <div className={f.Footer} >
-                            <div><AiOutlineHeart /> 12</div>
-                            <div><FaRegComment /> 3</div>
-                            <div><RxLoop /> 2</div>
+                            <div><AiOutlineHeart /> {data.likeCount}</div>
+                            <div><FaRegComment /> {data.commentCount}</div>
+                            <div><RxLoop /> {data.reTweetsCount}</div>
                         </div>
 
                     </div>

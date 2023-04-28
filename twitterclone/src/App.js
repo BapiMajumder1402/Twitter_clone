@@ -1,20 +1,20 @@
 import './App.css';
-import Nav from './Component/Navbar/Nav';
 import { Route, Routes } from 'react-router-dom'
 import Login from './Pages/Login/Login';
 import SignupPage from './Pages/Signuppage/Signuppage';
 import { Provider } from 'react-redux';
 import store from './Component/Redux/store';
-import Feed from './Component/FeedComponent/Feed';
+import Home from './Pages/Home Page/Home';
+
 function App() {
   return (
     <Provider store={store} >
-      <Feed />
-      {/* <Routes>
-        <Route path='/' element={<Login />}></Route>
+
+      <Routes>
+        <Route path="/" element={<Login />} />
         <Route path='/signup' element={<SignupPage />}></Route>
+        <Route path='/Home' element={<Home />}></Route>
       </Routes>
-      <Nav></Nav> */}
     </Provider>
   );
 }

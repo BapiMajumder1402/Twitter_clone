@@ -14,10 +14,10 @@ import { add_user, add_tweet } from '../../Component/Redux/actions';
 export default function Login() {
   const user = useSelector(state => state.user);
   const dispatch = useDispatch();
-  localStorage.setItem('users', JSON.stringify(users));
+  // localStorage.setItem('User', JSON.stringify(users));
   const Navigate = useNavigate();
   const [Loginuser, setLoginuser] = useState({ email: '', password: '' });
-  const updatedUsers = JSON.parse(localStorage.getItem("users")) || [];
+  const updatedUsers = JSON.parse(localStorage.getItem("User")) || [];
 
 
   function LoginHandler(e) {
@@ -29,10 +29,13 @@ export default function Login() {
     const access = updatedUsers.find(val => val.email === Loginuser.email && val.password === Loginuser.password);
     if (access) {
       dispatch(add_user(access))
+      Navigate("/Home")
     } else {
       console.log("No you are not logged in now.");
     }
   };
+
+  console.log(user)
 
   return (
     <div className={l.main}>

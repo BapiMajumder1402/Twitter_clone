@@ -2,6 +2,7 @@ import f from "./Feed.module.css"
 import { AiOutlineHeart } from 'react-icons/ai'
 import { RxLoop } from 'react-icons/rx'
 import { FaRegComment } from 'react-icons/fa'
+
 function Feed() {
     return (
         <div className={f.parent} >

@@ -8,7 +8,7 @@ import { Button } from "@mui/material";
 
 function SignupPage() {
     const Navigate = useNavigate()
-    const updatedUsers = JSON.parse(localStorage.getItem("users")) || []
+    const updatedUsers = JSON.parse(localStorage.getItem("User")) || []
     const [Signupuser, setSignupuser] = useState({ id: Math.random(), name: '', phone: '', email: '', password: '', repassword: '' });
     function SignupHandler(e) {
         const { name, value } = e.target;

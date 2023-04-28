@@ -6,8 +6,8 @@ import { Button } from "@mui/material";
 import { BsTwitter } from 'react-icons/bs';
 import { FcGoogle } from "react-icons/fc";
 import { BsApple } from "react-icons/bs";
-import users from "/home/akhilesh/Desktop/Twitter_clone/twitterclone/src/Data/users.json"
-import tweetdata from "/home/akhilesh/Desktop/Twitter_clone/twitterclone/src/Data/tweets.json"
+import users from "../../Data/users.json"
+import tweetdata from "../../Data/tweets.json"
 import { useSelector, useDispatch } from "react-redux";
 import { add_user, add_tweet } from '../../Component/Redux/actions';
 

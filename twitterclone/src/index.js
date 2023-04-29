@@ -1,22 +1,20 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
+import ReactDOM from 'react-dom';
 import App from './App';
-import { BrowserRouter } from 'react-router-dom'
+import { BrowserRouter } from 'react-router-dom';
 import { StyledEngineProvider } from '@mui/material';
-// import { LocalizationProvider } from '@mui/x-date-pickers';
+import { Provider } from 'react-redux';
+import store from './Component/Redux/store';
 
-
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-
-  <BrowserRouter>
-  {/* <LocalizationProvider dateAdapter={AdapterDayjs}> */}
-   <StyledEngineProvider injectFirst>
-    <App />
-    </StyledEngineProvider>
-    {/* </LocalizationProvider> */}
-  </BrowserRouter>
-
+ReactDOM.render(
+  <React.StrictMode>
+    <Provider store={store}>
+      <BrowserRouter>
+        <StyledEngineProvider injectFirst>
+          <App />
+        </StyledEngineProvider>
+      </BrowserRouter>
+    </Provider>
+  </React.StrictMode>,
+  document.getElementById('root')
 );
-

@@ -1,6 +1,7 @@
 const initialState = {
     user: {},
     tweets: [],
+    isAuthenticated: false
 };
 
 function reducer(state = initialState, action) {
@@ -14,6 +15,11 @@ function reducer(state = initialState, action) {
             return {
                 ...state,
                 tweets: [...state.tweets, ...action.payload]
+            }
+        case "isAuth":
+            return {
+                ...state,
+                isAuthenticated: action.payload
             }
         default:
             return state

@@ -4,3 +4,6 @@ export function add_user(loggedinUser) {
 export function add_tweet(tweets) {
     return { type: "add_tweet", payload: tweets }
 };
+export function setAuth(status) {
+    return { type: "isAuth", payload: status }
+};

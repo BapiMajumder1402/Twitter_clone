@@ -9,7 +9,7 @@ import { Button } from "@mui/material";
 function SignupPage() {
     const Navigate = useNavigate()
     const updatedUsers = JSON.parse(localStorage.getItem("User")) || []
-    const [Signupuser, setSignupuser] = useState({ id: Math.random(), name: '', phone: '', email: '', password: '', repassword: '', username: '' });
+    const [Signupuser, setSignupuser] = useState({ id: Math.random(), name: '', phone: '', email: '', password: '', repassword: '', username: '', isLogged: false });
     function SignupHandler(e) {
         const { name, value } = e.target;
         setSignupuser({ ...Signupuser, [name]: value });

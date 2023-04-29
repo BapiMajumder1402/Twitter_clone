@@ -10,18 +10,25 @@ import { Route, Routes, useNavigate } from 'react-router-dom'
 
 
 function Home() {
-
-    const isAuth = useSelector(state => state.isAuthenticated);
-    const tweets = useSelector(state => state.tweets);
-    const dispatch = useDispatch();
-    const navigate = useNavigate();
-
-    if (isAuth === false) {
-        navigate('/')
+    const Navigate = useNavigate();
+    const users = JSON.parse(localStorage.getItem('User'))
+    if (users !== null) {
+        const access = users.find(val => val.isLogged === true)
+        if (access == undefined) {
+            Navigate("/")
+        }
+    } else {
+        Navigate("/")
     }
+
+    const dispatch = useDispatch();
+
     useEffect(() => {
         dispatch(add_tweet(tweetdata))
     }, [])
+
+    const tweets = useSelector(state => state.tweets);
+
     return (<div className={h.mainContainer}>
         <Left />
         <div className={h.feedContainer}>

@@ -16,11 +16,6 @@ function reducer(state = initialState, action) {
                 ...state,
                 tweets: [...state.tweets, ...action.payload]
             }
-        case "isAuth":
-            return {
-                ...state,
-                isAuthenticated: action.payload
-            }
         default:
             return state
     }

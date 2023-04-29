@@ -8,7 +8,6 @@ import { FcGoogle } from "react-icons/fc";
 import { BsApple } from "react-icons/bs";
 import { useSelector, useDispatch } from "react-redux";
 import { add_user, add_tweet } from '../../Component/Redux/actions';
-import { setAuth } from '../../Component/Redux/actions';
 
 export default function Login() {
   const user = useSelector(state => state.user);
@@ -16,6 +15,7 @@ export default function Login() {
   const Navigate = useNavigate();
   const [Loginuser, setLoginuser] = useState({ email: '', password: '' });
   const updatedUsers = JSON.parse(localStorage.getItem("User")) || [];
+
 
   function LoginHandler(e) {
     const { name, value } = e.target;
@@ -25,13 +25,16 @@ export default function Login() {
   function loggedUser() {
     const access = updatedUsers.find(val => val.email === Loginuser.email && val.password === Loginuser.password);
     if (access) {
+      access.isLogged = true;
       dispatch(add_user(access));
-      dispatch(setAuth(true));
+      const updatedUsersJSON = JSON.stringify(updatedUsers);
+      localStorage.setItem("User", updatedUsersJSON);
       Navigate("/Home");
     } else {
       console.log("No you are not logged in now.");
     }
   };
+
 
   return (
     <div className={l.main}>

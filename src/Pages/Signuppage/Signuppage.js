@@ -19,6 +19,7 @@ function SignupPage() {
         localStorage.setItem("User", JSON.stringify(data));
         setSignupuser({ id: Math.random(), name: '', phone: '', email: '', password: '', repassword: '', username: '' });
     }
+
     return (<div className={s.main}>
         <div className={s.box}>
 
@@ -27,7 +28,7 @@ function SignupPage() {
                 <TextField className={s.input} id="outlined-basic" label="Name" variant="outlined" type='text' onChange={SignupHandler} value={Signupuser.name} name='name' />
                 <TextField className={s.input} id="outlined-basic" label="@UserName" variant="outlined" type='text' onChange={SignupHandler} value={Signupuser.username} name='username' />
                 <TextField className={s.input} id="outlined-basic" label="Phone" variant="outlined" type='number' onChange={SignupHandler} value={Signupuser.phone} name='phone' />
-                <TextField className={s.input} id="outlined-basic"  label="Email" variant="outlined" type='email' onChange={SignupHandler} value={Signupuser.email} name='email' />
+                <TextField className={s.input} id="outlined-basic" label="Email" variant="outlined" type='email' onChange={SignupHandler} value={Signupuser.email} name='email' />
                 <TextField className={s.input} id="outlined-basic" label="Password" variant="outlined" type='password' onChange={SignupHandler} value={Signupuser.password} name='password' />
                 <TextField className={s.input} id="outlined-basic" label="Confirm password" variant="outlined" type='password' onChange={SignupHandler} value={Signupuser.repassword} name='repassword' />
                 {/* <DatePicker label="Basic date picker" /> */}

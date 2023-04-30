@@ -10,15 +10,33 @@ import { useSelector, useDispatch } from "react-redux";
 import { add_user, add_tweet } from '../../Component/Redux/actions';
 
 export default function Login() {
-  const user = useSelector(state => state.user);
+  // const user = useSelector(state => state.user);
   const dispatch = useDispatch();
   const Navigate = useNavigate();
   const [Loginuser, setLoginuser] = useState({ email: '', password: '' });
   const updatedUsers = JSON.parse(localStorage.getItem("User")) || [];
   const access = updatedUsers.find(val => val.email === Loginuser.email && val.password === Loginuser.password);
   const check = updatedUsers.find(val => val.isLogged === true)
+  const [error, setError] = useState(false);
+  const [errortxt, setErrorTxt] = useState("");
 
   useEffect(() => { if (check) { Navigate("/home") } }, [updatedUsers]);
+
+  useEffect(() => {
+    const emailRegex = /^([a-zA-Z0-9._%+-]+)@([a-zA-Z0-9.-]+\.[a-zA-Z]{2,})$/;
+    if (Loginuser.password === "" && Loginuser.email === "") {
+      setError(true);
+      setErrorTxt("Email and Password are required Feilds");
+    } else if (!emailRegex.test(Loginuser.email)) {
+      setError(true);
+      setErrorTxt("Invalid Email");
+    } else if (Loginuser.password.length < 5) {
+      setError(true);
+      setErrorTxt("Password should be more than 6 characters long");
+    } else {
+      setError(false);
+    }
+  }, [Loginuser])
 
   function LoginHandler(e) {
     const { name, value } = e.target;
@@ -26,14 +44,16 @@ export default function Login() {
   };
 
   function loggedUser() {
-    if (access) {
-      access.isLogged = true;
-      const updatedUsersJSON = JSON.stringify(updatedUsers);
-      dispatch(add_user(access))
-      localStorage.setItem("User", updatedUsersJSON);
-      Navigate("/Home");
-    } else {
-      console.log("No you are not logged in now.");
+    if (error === false) {
+      if (access) {
+        access.isLogged = true;
+        const updatedUsersJSON = JSON.stringify(updatedUsers);
+        dispatch(add_user(access))
+        localStorage.setItem("User", updatedUsersJSON);
+        Navigate("/Home");
+      } else {
+        console.log("No you are not logged in now.");
+      }
     }
   };
 
@@ -67,6 +87,8 @@ export default function Login() {
           <div>
             <Button className={l.btnSignup} variant="contained" disableElevation onClick={() => Navigate('/Signup')} >Not a User? SignUp!</Button>
           </div>
+          <h2>{error ? errortxt : ""}</h2>
+
 
         </form>
 

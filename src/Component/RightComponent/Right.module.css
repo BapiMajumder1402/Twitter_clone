@@ -1,11 +1,16 @@
 .main{
+    min-height: 100%;
+    position: sticky;
+    bottom: 0;
     margin-left: 1.5rem;
     display: flex;
     flex-direction: column;
     gap: 1rem;
     width: 30vw;
+
 }
 .searchbox{
+    background-color: white;
     width: 80%;
 }
 .search{
@@ -15,6 +20,9 @@
     gap: 1rem;
     margin-top: 2rem ;
     border-radius: 23px;
+}
+.search:hover{
+    border: 1px solid #1D9BF0;
 }
 .search>input{
     font-size: 1.2rem;
@@ -34,7 +42,18 @@
     padding: 1.2rem;
     border-radius: 20px;
     width: 80%;
-    background-color: rgb(231, 235, 239);
+    background-color: rgb(238, 245, 251);
+}
+.bot_box{
+    position: sticky;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1.2rem;
+    border-radius: 20px;
+    width: 80%;
+    background-color: rgb(238, 245, 251);
 }
 
 
@@ -74,4 +93,8 @@
     color: white;
     background-color: black;
     padding: .6rem;
+}
+.terms>p{
+    margin-left: 1rem;
+    width: 95%;
 }

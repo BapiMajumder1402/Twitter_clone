@@ -14,7 +14,7 @@ export default function FeedTop() {
           <div>Following</div>
         </div>
       </div>
-      <Post/>
+      <Post />
     </div>
   )
 }

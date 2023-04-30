@@ -2,7 +2,8 @@
 
     display: flex;
     justify-content: end;
-    
+    position: sticky;
+    top: 0;
     height: 100vh;
     width: 25vw;
   }
@@ -49,23 +50,33 @@
     background-color: #0782d4;
   }
   .tlogo{
-    border-radius: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 2.5rem;
+    width: 2.5rem;
+    border-radius: 50%;
     color: #1D9BF0;
     font-size:1.8rem;
+  }
+  .tlogo:hover{
+    background-color: rgb(228, 223, 223);
   }
   
   .logo{
     font-size: 1.2rem;
   }
 .pro{
+    width: 80%;
     margin-top: 1rem;
     border-radius: 23px;
     padding: .5rem;
     
     display: flex;
+    justify-content: space-evenly;
 }
 .pro:hover{
-    background-color: rgb(236, 235, 234);
+    background-color: rgb(236, 233, 230);
 }
 .img{
     display: flex;
@@ -89,4 +100,15 @@
 }
 .content>span{
   font-size: 1.2rem;
+}
+.logout>button{
+  background-color: white;
+  color: #0782d4;
+  border: 0;
+  outline: none;
+  font-weight: 650;
+}
+.name>p{
+  font-size: .8rem;
+  font-weight: 600;
 }

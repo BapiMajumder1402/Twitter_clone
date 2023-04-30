@@ -1,12 +1,15 @@
 .main{
+    
     background-color: white;
     width: 40vw;
     border: .5px solid rgb(244, 240, 240);
 }
 .box{
-    background-color: white;
+    z-index: 1000;
     position: sticky;
     top: 0;
+    background:transparent;
+    background-color: white;
     border: .5px solid rgb(244, 240, 240)
     ;
 }

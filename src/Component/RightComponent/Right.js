@@ -33,7 +33,7 @@ export default function Right() {
                 })}
                 <p className={r.show}>Show More</p>
             </div>
-            <div className={r.box}>
+            <div className={r.bot_box}>
                 <h2>Who to Follow</h2>
                 {Follow.map((e) => {
                     return (
@@ -55,7 +55,7 @@ export default function Right() {
                     )
                 })}
                 <p className={r.show}>Show More</p>
-            </div>
+                <div className={r.terms}>
             <p>
                 Terms of Service
                 Privacy Policy
@@ -65,6 +65,10 @@ export default function Right() {
                 More
                 © 2023 X Corp.
             </p>
+            </div>
+            </div>
+            
+            
         </div>
     )
 }

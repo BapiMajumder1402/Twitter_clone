@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { BsTwitter } from 'react-icons/bs';
 import { CgMoreAlt } from 'react-icons/cg'
 import l from './Left.module.css'
@@ -6,20 +6,36 @@ import { LeftData } from './LeftData';
 import { useSelector, useDispatch } from "react-redux";
 import { logoutUser } from '../Redux/actions';
 import { useNavigate } from 'react-router-dom';
+import Popover from '@mui/material/Popover';
+import Typography from '@mui/material/Typography';
+import Button from '@mui/material/Button';
 
 function Left() {
+
   const user = useSelector(state => state.user);
   const dispatch = useDispatch();
   const Navigate = useNavigate();
 
 
-  function changeHandler(e) {
-    if (e.target.value === 'logout') {
+  function clickHandler(e) {
       dispatch(logoutUser());
       Navigate("/");
-    }
+    
   }
+///////MUI////////
+  const [anchorEl, setAnchorEl] = React.useState(null);
 
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+
+  const open = Boolean(anchorEl);
+  const id = open ? 'simple-popover' : undefined;
+/////////MUI//////
   return (
 
     <div className={l.main_container}>
@@ -35,13 +51,28 @@ function Left() {
         <div className={l.pro}>
           <div className={l.img}><img src="https://tse4.mm.bing.net/th?id=OIP.Ii15573m21uyos5SZQTdrAHaHa&pid=Api&P=0" alt="" /></div>
           <div className={l.name}>
-            <select onChange={changeHandler} >
-              <option><div><p>{user.name}</p><p>{user.username}</p></div></option>
-              <option >Add an Existing account</option>
-              <option value={'logout'} >LogOut {user.username}</option>
-            </select>
+            <p>{user.name}</p>
+            <span>{user.username}</span>
           </div>
-          <div className={l.more}><CgMoreAlt /></div>
+
+
+          <div className={l.more}>
+            <Button aria-describedby={id}  onClick={handleClick}>
+              <CgMoreAlt/>
+            </Button>
+            <Popover
+              id={id}
+              open={open}
+              anchorEl={anchorEl}
+              onClose={handleClose}
+              anchorOrigin={{
+                vertical: 'bottom',
+                horizontal: 'left',
+              }}
+            >
+              <Typography sx={{ p: 2 }} onClick={clickHandler} className={l.logout}><button  value={'logout'} >LogOut {user.username}</button></Typography>
+            </Popover>
+          </div>
         </div>
       </div>
     </div>

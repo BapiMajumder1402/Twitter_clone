@@ -10,15 +10,35 @@ import { useSelector, useDispatch } from "react-redux";
 import { add_post } from '../Redux/actions';
 
 
-
-export default function Post() {
+function Post() {
     const Dispatch = useDispatch();
     const user = useSelector(state => state.user);
-    const [post, setPost] = useState({ "id": Math.random(), "content": "", "createdAt": "2023-04-27T13:30:00.000Z", "image": "https://picsum.photos/1000/500?q=2", "tweetedBy": { "id": Math.random(), "username": "", "name": "", "profilePhoto": "" }, "likeCount": 0, "commentCount": 0, "reTweetsCount": 0, "isLiked": false });
+    const [post, setPost] = useState({
+        "id": Math.random(),
+        "content": "", "createdAt": "2023-04-27T13:30:00.000Z",
+        "image": "https://picsum.photos/1000/500?q=2",
+        "tweetedBy": { "id": Math.random(), "username": "", "name": "", "profilePhoto": "" },
+        "likeCount": 0,
+        "commentCount": 0,
+        "reTweetsCount": 0,
+        "isLiked": false
+    });
 
 
     function handelPost(e) {
-        setPost({ "id": Math.random(), "content": e.target.value, "createdAt": "2023-04-27T13:30:00.000Z", "image": "https://picsum.photos/1000/500?q=2", "tweetedBy": { "id": user.id, "username": user.username, "name": user.name, "profilePhoto": "https://randomuser.me/api/portraits/men/30.jpg" }, "likeCount": 0, "commentCount": 0, "reTweetsCount": 0, "isLiked": false });
+        setPost({
+            "id": Math.random(),
+            "content": e.target.value,
+            "createdAt": "2023-04-27T13:30:00.000Z",
+            "image": "https://picsum.photos/1000/500?q=2",
+            "tweetedBy": {
+                "id": user.id, "username": user.username, "name": user.name, "profilePhoto": "https://randomuser.me/api/portraits/men/30.jpg"
+            },
+            "likeCount": 0,
+            "commentCount": 0,
+            "reTweetsCount": 0,
+            "isLiked": false
+        });
     };
     function postHandler() {
         Dispatch(add_post(post));
@@ -48,3 +68,5 @@ export default function Post() {
         </div>
     )
 }
+
+export default Post;

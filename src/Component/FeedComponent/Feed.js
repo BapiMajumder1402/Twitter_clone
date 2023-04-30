@@ -2,8 +2,23 @@ import f from "./Feed.module.css"
 import { AiOutlineHeart } from 'react-icons/ai'
 import { RxLoop } from 'react-icons/rx'
 import { FaRegComment } from 'react-icons/fa'
+import { useState } from 'react'
+
 
 function Feed({ data }) {
+    // const [like, setLike] = useState(false)
+    // const [likecount, setLikeCount] = useState(data.likeCount)
+
+    // function handleLike() {
+
+    //     if (like===false) {
+    //         setLikeCount(likecount+1)
+    //     }
+    //     else {
+    //         setLikeCount(likecount-1)
+    //     }
+    
+    // setLike(true)}
     return (
         <div className={f.parent} >
             <div className={f.Header} >
@@ -16,17 +31,13 @@ function Feed({ data }) {
                     <div className={f.Body}>
                         <img src={data.image} className={f.bodyImage} />
                         <div className={f.Footer} >
-                            <div><AiOutlineHeart /> {data.likeCount}</div>
+                            <div><AiOutlineHeart  /> {data.likeCount}</div>
                             <div><FaRegComment /> {data.commentCount}</div>
                             <div><RxLoop /> {data.reTweetsCount}</div>
                         </div>
-
                     </div>
                 </div >
-
-
             </div>
-
         </div>)
 }
 export default Feed;

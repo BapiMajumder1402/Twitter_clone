@@ -18,7 +18,7 @@ function reducer(state = initialState, action) {
         case "add_post":
             return {
                 ...state,
-                tweets: [...state.tweets, action.payload]
+                tweets: [action.payload ,...state.tweets]
             }
         case "log_out":
             return {

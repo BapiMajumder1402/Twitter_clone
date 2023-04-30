@@ -42,12 +42,13 @@ function Post() {
     };
     function postHandler() {
         Dispatch(add_post(post));
+        setPost("")
     }
 
     return (
         <div className={p.main}>
             <div className={p.img}>
-                <img src="https://tse1.mm.bing.net/th?id=OIP.bTfKGpY95veNESkfsyNaMQHaE8&pid=Api&P=0" alt="" />
+                <img src="https://www.nicepng.com/png/full/933-9332131_profile-picture-default-png.png" alt="" />
             </div>
             <div className={p.post}>
                 <div className={p.input}>

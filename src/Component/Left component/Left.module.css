@@ -1,5 +1,4 @@
 .main_container{
-
     display: flex;
     justify-content: end;
     position: sticky;
@@ -8,19 +7,18 @@
     width: 25vw;
   }
   .box{
+    cursor: pointer;
     display: flex;
     flex-direction: column;
     gap: 5rem;
-    width: 70%;
-  
+    /* width: 70%; */
   }
   .contents{
-    width: 80%;
+    /* width: 80%; */
     padding: 1.5rem;
     display: flex;
     flex-direction: column;
     gap: .5rem;
-    
   }
   .content{
     padding:.5rem ;
@@ -28,7 +26,12 @@
     align-items: center;
     gap: 1rem;
     border-radius: 23px;
-
+  }
+  .content>svg{
+    font-size: 1.5rem;
+  }
+  .content>p{
+    font-size: 1.4rem;
   }
   .content:hover{
     background-color: rgb(233, 231, 231);

@@ -8,6 +8,8 @@ import { FcGoogle } from "react-icons/fc";
 import { BsApple } from "react-icons/bs";
 import { useSelector, useDispatch } from "react-redux";
 import { add_user, add_tweet } from '../../Component/Redux/actions';
+import Swal from 'sweetalert2';
+
 
 export default function Login() {
   const dispatch = useDispatch();
@@ -49,12 +51,13 @@ export default function Login() {
       if (access) {
         access.isLogged = true;
         const updatedUsersJSON = JSON.stringify(updatedUsers);
-        dispatch(add_user(access))
+        dispatch(add_user(access));
         localStorage.setItem("User", updatedUsersJSON);
+        Swal.fire({ title: 'Success!', text: 'Welcome to Twitter Made by Bappi and Akhilesh.', icon: 'success', confirmButtonText: 'Ok' });
         Navigate("/Home");
       } else {
-        setloginerror(true)
-        setloginErrorTxt("Invalid Credentials")
+        setloginerror(true);
+        setloginErrorTxt("Invalid Credentials");
       }
     }
   };

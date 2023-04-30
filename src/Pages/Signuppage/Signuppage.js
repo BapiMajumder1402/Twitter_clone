@@ -3,6 +3,8 @@ import s from "./Signuppage.module.css"
 import { useNavigate } from 'react-router-dom'
 import { TextField } from "@mui/material";
 import { Button } from "@mui/material";
+import Swal from 'sweetalert2';
+
 
 
 function SignupPage() {
@@ -52,6 +54,7 @@ function SignupPage() {
                 localStorage.setItem("User", JSON.stringify(data));
                 setsignUperror(false);
                 Navigate("/");
+                Swal.fire({ title: 'Success!', text: 'Your account has been created.', icon: 'success', confirmButtonText: 'Ok' });
             }
         }
         else {

@@ -16,9 +16,9 @@ export default function Login() {
   const [Loginuser, setLoginuser] = useState({ email: '', password: '' });
   const updatedUsers = JSON.parse(localStorage.getItem("User")) || [];
   const access = updatedUsers.find(val => val.email === Loginuser.email && val.password === Loginuser.password);
+  const check = updatedUsers.find(val => val.isLogged === true)
 
-
-
+  useEffect(() => { if (check) { Navigate("/home") } }, [updatedUsers]);
 
   function LoginHandler(e) {
     const { name, value } = e.target;

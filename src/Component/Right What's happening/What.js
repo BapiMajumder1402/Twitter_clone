@@ -9,7 +9,7 @@ export const What = [
         tweet: "45.8k"
     },
     {
-        tag: "# Elon Musk is scared of Akhilesh",
+        tag: "# Elon Musk is scared of Akhilesh and Bappi",
         tweet: "58.9k"
     },
     {

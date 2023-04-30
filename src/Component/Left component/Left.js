@@ -11,10 +11,14 @@ function Left() {
   const user = useSelector(state => state.user);
   const dispatch = useDispatch();
   const Navigate = useNavigate();
-
+  const updatedUsers = JSON.parse(localStorage.getItem("User")) || [];
+  const access = updatedUsers.find(val => val.email === user.email && val.password === user.password);
 
   function changeHandler(e) {
     if (e.target.value === 'logout') {
+      access.isLogged = false;
+      const logoutStorage = JSON.stringify(updatedUsers);
+      localStorage.setItem("User", logoutStorage);
       dispatch(logoutUser());
       Navigate("/");
     }

@@ -10,7 +10,6 @@ import { useSelector, useDispatch } from "react-redux";
 import { add_user, add_tweet } from '../../Component/Redux/actions';
 
 export default function Login() {
-  // const user = useSelector(state => state.user);
   const dispatch = useDispatch();
   const Navigate = useNavigate();
   const [Loginuser, setLoginuser] = useState({ email: '', password: '' });
@@ -19,6 +18,8 @@ export default function Login() {
   const check = updatedUsers.find(val => val.isLogged === true)
   const [error, setError] = useState(false);
   const [errortxt, setErrorTxt] = useState("");
+  const [loginerror, setloginerror] = useState(false);
+  const [loginerrortxt, setloginErrorTxt] = useState("");
 
   useEffect(() => { if (check) { Navigate("/home") } }, [updatedUsers]);
 
@@ -52,7 +53,8 @@ export default function Login() {
         localStorage.setItem("User", updatedUsersJSON);
         Navigate("/Home");
       } else {
-        console.log("No you are not logged in now.");
+        setloginerror(true)
+        setloginErrorTxt("Invalid Credentials")
       }
     }
   };
@@ -88,8 +90,7 @@ export default function Login() {
             <Button className={l.btnSignup} variant="contained" disableElevation onClick={() => Navigate('/Signup')} >Not a User? SignUp!</Button>
           </div>
           <h2>{error ? errortxt : ""}</h2>
-
-
+          <h2>{loginerror ? loginerrortxt : ""}</h2>
         </form>
 
       </div>

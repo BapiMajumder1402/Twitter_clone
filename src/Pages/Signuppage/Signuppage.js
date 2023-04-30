@@ -51,6 +51,7 @@ function SignupPage() {
                 const data = [...updatedUsers, Signupuser];
                 localStorage.setItem("User", JSON.stringify(data));
                 setsignUperror(false);
+                Navigate("/");
             }
         }
         else {

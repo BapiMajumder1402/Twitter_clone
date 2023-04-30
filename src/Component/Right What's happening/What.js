@@ -5,15 +5,15 @@ export const What = [
         tweet: "22.5k"
     },
     {
-        tag: "# Elon Musk whats to know location",
+        tag: "# Bappi and Akhilesh are cloning down Twitter",
         tweet: "45.8k"
     },
     {
-        tag: "# He wants to sell Twitter",
+        tag: "# Elon Musk is scared of Akhilesh",
         tweet: "58.9k"
     },
     {
-        tag: "# A rockect just launched from spaceX",
+        tag: "# Akhilesh and Bappi are planning to takeover SpaceX",
         tweet: "69.5k"
     },
 ]

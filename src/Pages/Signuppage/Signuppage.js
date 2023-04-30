@@ -24,7 +24,10 @@ function SignupPage() {
 
     useEffect(() => {
         const emailRegex = /^([a-zA-Z0-9._%+-]+)@([a-zA-Z0-9.-]+\.[a-zA-Z]{2,})$/;
-        if (Signupuser.name.length < 2) {
+        if (Signupuser.name === '' && Signupuser.phone === '' && Signupuser.email === '' && Signupuser.password === '' && Signupuser.repassword === '' && Signupuser.username === '') {
+            setError(true);
+            setErrorTxt("Feilds Can't be Empty");
+        } else if (Signupuser.name.length < 2) {
             setError(true);
             setErrorTxt("Name should be more than one character long");
         } else if (Signupuser.phone.length < 9) {
@@ -39,8 +42,6 @@ function SignupPage() {
         } else if (Signupuser.password !== Signupuser.repassword) {
             setError(true);
             setErrorTxt("Passwords do not match");
-        } else if (Signupuser.name === '' && Signupuser.phone === '' && Signupuser.email === '' && Signupuser.password === '' && Signupuser.repassword === '' && Signupuser.username === '') {
-            setError(true);
         } else {
             setError(false);
         }

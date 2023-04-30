@@ -9,6 +9,8 @@ import { useNavigate } from 'react-router-dom';
 import Popover from '@mui/material/Popover';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
+import Swal from 'sweetalert2';
+
 
 function Left() {
 
@@ -23,6 +25,7 @@ function Left() {
     const logoutStorage = JSON.stringify(updatedUsers);
     localStorage.setItem("User", logoutStorage);
     dispatch(logoutUser());
+    Swal.fire({ title: 'Success!', text: 'Succes Fully Loggedout Bye! bye!', icon: 'success', confirmButtonText: 'Ok' });
     Navigate("/");
   }
   ///////MUI////////

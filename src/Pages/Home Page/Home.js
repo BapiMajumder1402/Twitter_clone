@@ -14,17 +14,17 @@ function Home() {
     const Navigate = useNavigate();
     const dispatch = useDispatch();
     const tweets = useSelector(state => state.tweets);
+    const users = JSON.parse(localStorage.getItem('User'));
 
-    const users = JSON.parse(localStorage.getItem('User'))
     if (users !== null) {
         const access = users.find(val => val.isLogged === true)
         if (access == undefined) {
             Navigate("/")
         } else {
-            dispatch(add_user(access))
+            dispatch(add_user(access));
         }
     } else {
-        Navigate("/")
+        Navigate("/");
     }
 
 

@@ -1,7 +1,6 @@
 const initialState = {
     user: {},
     tweets: [],
-    isAuthenticated: false
 };
 
 function reducer(state = initialState, action) {
@@ -20,6 +19,11 @@ function reducer(state = initialState, action) {
             return {
                 ...state,
                 tweets: [...state.tweets, action.payload]
+            }
+        case "log_out":
+            return {
+                ...state,
+                user: {}
             }
         default:
             return state

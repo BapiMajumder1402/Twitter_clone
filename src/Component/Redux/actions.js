@@ -7,3 +7,6 @@ export function add_tweet(tweets) {
 export function add_post(tweet) {
     return { type: "add_post", payload: tweet }
 };
+export function logoutUser() {
+    return { type: "log_out", payload: null }
+};

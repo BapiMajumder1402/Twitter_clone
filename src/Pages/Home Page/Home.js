@@ -12,23 +12,26 @@ import Right from '../../Component/RightComponent/Right'
 
 function Home() {
     const Navigate = useNavigate();
+    const dispatch = useDispatch();
+    const tweets = useSelector(state => state.tweets);
+
     const users = JSON.parse(localStorage.getItem('User'))
     if (users !== null) {
         const access = users.find(val => val.isLogged === true)
         if (access == undefined) {
             Navigate("/")
+        } else {
+            dispatch(add_user(access))
         }
     } else {
         Navigate("/")
     }
 
-    const dispatch = useDispatch();
 
     useEffect(() => {
         dispatch(add_tweet(tweetdata))
     }, [])
 
-    const tweets = useSelector(state => state.tweets);
 
     return (<div className={h.mainContainer}>
         <Left />
@@ -36,7 +39,7 @@ function Home() {
             <FeedTop />
             {tweets.map((val, i) => <Feed key={i} data={val} />)}
         </div>
-        <Right/>
+        <Right />
     </div>)
 }
 export default Home;

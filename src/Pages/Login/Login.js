@@ -15,6 +15,7 @@ export default function Login() {
   const Navigate = useNavigate();
   const [Loginuser, setLoginuser] = useState({ email: '', password: '' });
   const updatedUsers = JSON.parse(localStorage.getItem("User")) || [];
+  const access = updatedUsers.find(val => val.email === Loginuser.email && val.password === Loginuser.password);
 
 
   function LoginHandler(e) {
@@ -23,11 +24,10 @@ export default function Login() {
   };
 
   function loggedUser() {
-    const access = updatedUsers.find(val => val.email === Loginuser.email && val.password === Loginuser.password);
     if (access) {
       access.isLogged = true;
-      dispatch(add_user(access));
       const updatedUsersJSON = JSON.stringify(updatedUsers);
+      dispatch(add_user(access))
       localStorage.setItem("User", updatedUsersJSON);
       Navigate("/Home");
     } else {
@@ -53,7 +53,7 @@ export default function Login() {
             <hr />
           </div>
           <div className={l.inputDiv}>
-            <TextField className={l.input} type='email'  placeholder='Email' onChange={LoginHandler} value={Loginuser.email} name='email' id="outlined-basic" label="Email" variant="outlined" />
+            <TextField className={l.input} type='email' placeholder='Email' onChange={LoginHandler} value={Loginuser.email} name='email' id="outlined-basic" label="Email" variant="outlined" />
           </div>
           <div className={l.inputDiv}>
             <TextField className={l.input} type='password' placeholder='Password' onChange={LoginHandler} value={Loginuser.password} name='password' id="outlined-basic" label="Password" variant="outlined" />

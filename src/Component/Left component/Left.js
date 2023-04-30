@@ -4,10 +4,24 @@ import { CgMoreAlt } from 'react-icons/cg'
 import l from './Left.module.css'
 import { LeftData } from './LeftData';
 import { useSelector, useDispatch } from "react-redux";
+import { logoutUser } from '../Redux/actions';
+import { useNavigate } from 'react-router-dom';
 
-export default function Left() {
+function Left() {
   const user = useSelector(state => state.user);
+  const dispatch = useDispatch();
+  const Navigate = useNavigate();
+
+
+  function changeHandler(e) {
+    if (e.target.value === 'logout') {
+      dispatch(logoutUser());
+      Navigate("/");
+    }
+  }
+
   return (
+
     <div className={l.main_container}>
       <div className={l.box}>
         <div className={l.contents}>
@@ -20,10 +34,17 @@ export default function Left() {
         </div>
         <div className={l.pro}>
           <div className={l.img}><img src="https://tse4.mm.bing.net/th?id=OIP.Ii15573m21uyos5SZQTdrAHaHa&pid=Api&P=0" alt="" /></div>
-          <div className={l.name}><p>{user.name}</p><p>{user.username}</p></div>
+          <div className={l.name}>
+            <select onChange={changeHandler} >
+              <option><div><p>{user.name}</p><p>{user.username}</p></div></option>
+              <option >Add an Existing account</option>
+              <option value={'logout'} >LogOut {user.username}</option>
+            </select>
+          </div>
           <div className={l.more}><CgMoreAlt /></div>
         </div>
       </div>
     </div>
   )
 }
+export default Left;

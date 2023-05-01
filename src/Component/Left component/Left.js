@@ -50,7 +50,7 @@ function Left() {
           <div className={l.tlogo}><BsTwitter /></div>
           {LeftData.map((e) => {
             return (
-              <div key={Math.random()} className={l.content}>{e.icon}{e.text}</div>)
+              <div key={Math.random()} className={l.content}>{e.icon} <p>{e.text}</p> </div>)
           })}
           <div><button className={l.tbtn}>Tweet</button></div>
         </div>

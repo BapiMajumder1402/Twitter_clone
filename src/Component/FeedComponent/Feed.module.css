@@ -1,4 +1,5 @@
 .parent {
+
   border: .5px solid rgb(246, 241, 241);
   width: 39vw;
   display: flex;
@@ -53,6 +54,7 @@
 /* ================================================ */
 
 .Body {
+  cursor: pointer;
   margin-top: 1.5rem;
   height: max-content;
   width: 100%;
